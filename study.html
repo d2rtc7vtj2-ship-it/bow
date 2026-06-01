@@ -2155,5 +2155,17 @@
             init();
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof initCloudSync !== 'function') return;
+      initCloudSync({
+        appKey: 'study',
+        syncedPrefixes: ['studyDashboardState', 'lastCheckedDate'],
+        onApplied: function () {
+          window.location.reload();
+        }
+      });
+    });
+    </script>
 </body>
 </html>
