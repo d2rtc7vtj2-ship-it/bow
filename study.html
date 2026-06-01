@@ -41,8 +41,10 @@
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            overflow-y: scroll;
             margin: 0;
             padding: max(28px, env(safe-area-inset-top, 28px)) calc(20px + env(safe-area-inset-right, 0px)) 60px calc(20px + env(safe-area-inset-left, 0px));
+            scrollbar-gutter: stable;
         }
 
         body::before {
@@ -55,7 +57,6 @@
             filter: blur(40px);
             pointer-events: none;
             z-index: -2;
-            animation: drift 36s ease-in-out infinite alternate;
         }
 
         body::after {
@@ -66,11 +67,6 @@
             background-size: 3px 3px;
             pointer-events: none;
             z-index: -1;
-        }
-
-        @keyframes drift {
-            0%   { transform: translate3d(0,0,0); }
-            100% { transform: translate3d(-22px, 14px, 0); }
         }
 
         body.in-focus-mode {
